@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --background-color: #1e1e1e;
+    --container-bg-color: #2a2a2a;
+    --user-message-bg: #007bff;
+    --bot-message-bg: #3a3a3a;
+    --text-color: #e0e0e0;
+    --input-bg-color: #333333;
+    --border-color: #444;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#chat-container {
+    width: 80%;
+    max-width: 800px;
+    height: 90vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--container-bg-color);
+    overflow: hidden;
+}
+
+#chat-window {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Custom scrollbar for a modern look */
+#chat-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-window::-webkit-scrollbar-track {
+    background: var(--container-bg-color);
+}
+
+#chat-window::-webkit-scrollbar-thumb {
+    background-color: var(--bot-message-bg);
+    border-radius: 10px;
+    border: 2px solid var(--container-bg-color);
+}
+
+.message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 70%;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: var(--user-message-bg);
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    background-color: var(--bot-message-bg);
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+#input-area {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+#message-input {
+    flex-grow: 1;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+#message-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--user-message-bg);
+}
+
+#send-button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: var(--user-message-bg);
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 15px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
